@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/Login.css'; // Ensure this file contains the necessary styles
-import PlantImage from '../images/login.png'; // Replace with the actual path to your plant image
+import '../styles/Login.css'; 
+import PlantImage from '../assets/login.png'; 
 
 const Login = () => {
   return (
