@@ -6,7 +6,7 @@ import DoctorImage from '../assets/Landingpageimg.png';
 const LandingPage = () => {
   return (
     <div className="landing-page">
-      {/ */}
+      {/* */}
       <Header />
 
       <main className="main-content">

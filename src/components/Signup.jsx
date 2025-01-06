@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles/Signup.css";
-import leafImage from "../assets/signup.jpeg"; 
+import leafImage from "../assets/signup.jpg"; 
 
 const Signup = () => {
   const [formData, setFormData] = useState({
