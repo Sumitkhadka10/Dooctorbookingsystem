@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "../styles/Signup.css";
-import leafImage from "../assets/signup.jpg"; 
+import leafImage from "../assets/signup.jpg";
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -10,6 +11,7 @@ const Signup = () => {
   });
 
   const [errors, setErrors] = useState({});
+  const [successMessage, setSuccessMessage] = useState("");
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -21,14 +23,15 @@ const Signup = () => {
 
   const validate = () => {
     const newErrors = {};
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!formData.name.trim()) {
       newErrors.name = "Name cannot be blank";
     }
     if (!formData.email.trim()) {
       newErrors.email = "Email address cannot be blank";
-    } else if (!formData.email.includes("@")) {
-      newErrors.email = "Email must include '@'";
+    } else if (!emailRegex.test(formData.email)) {
+      newErrors.email = "Enter a valid email address";
     }
     if (!formData.password.trim()) {
       newErrors.password = "Password cannot be blank";
@@ -42,10 +45,12 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setSuccessMessage(""); // Clear previous messages
     if (validate()) {
       console.log("Form submitted successfully", formData);
-      alert("Signup successful!");
-  
+      setSuccessMessage("Signup successful!"); // Set success message
+      // Reset the form
+      setFormData({ name: "", email: "", password: "" });
     }
   };
 
@@ -54,7 +59,7 @@ const Signup = () => {
       <div className="signup-container">
         <div className="signup-form">
           <h2>Get Started Now</h2>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} autoComplete="off">
             <div className="form-group">
               <label htmlFor="name">Name</label>
               <input
@@ -93,15 +98,18 @@ const Signup = () => {
             <button className="signup-btn" type="submit">
               Signup
             </button>
+            {successMessage && (
+              <p className="success-message">{successMessage}</p>
+            )}
           </form>
           <div className="signup-link">
             <p>
-              Have an account? <a href="/login">Sign In</a>
+              Have an account? <Link to="/login">Sign In</Link>
             </p>
           </div>
         </div>
         <div className="signup-image">
-          <img src={leafImage} alt="Signup visual" />
+          <img src={leafImage} alt="Decorative signup page visual" />
         </div>
       </div>
     </div>
