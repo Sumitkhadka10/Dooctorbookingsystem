@@ -17,7 +17,7 @@ const Contactus = () => {
         <div className="map-container">
           <iframe
             title="Google Map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.2199192311523!2d-80.86229952463523!3d35.403301780248085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8856a9966d333f8d%3A0x22b6c1757b1f900d!2s18501%20Northcross%20Dr%2C%20Huntersville%2C%20NC%2028078%2C%20USA!5e0!3m2!1sen!2snp!4v1696069277031!5m2!1sen!2snp"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10973.982189066575!2d85.3240!3d27.7172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e73fba22222222%3A0x3f8718f9d7b20a3f!2sKathmandu%2C%20Nepal!5e0!3m2!1sen!2snp!4v1698888888888!5m2!1sen!2snp"
             width="100%"
             height="300"
             style={{ border: 0 }}
@@ -27,7 +27,7 @@ const Contactus = () => {
         </div>
 
         <div className="contact-info">
-          <h2>HealthCare Allyear</h2>
+          <h2>DOCTOR BOOKING SYSTEM</h2>
           <p>Good Health for You</p>
           <p>
             <strong>Address:</strong> Kageshwori,Manohara 09 <br />

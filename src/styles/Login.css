@@ -1,22 +1,33 @@
-/* Wrap all login-related styles under a parent class */
-.login-page {
+/* Ensure that margin and padding are reset globally */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Wrap all login-related styles under a parent class */
+  .login-page {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background-color: #f9f9f9;
+    padding: 20px; 
   }
   
+  /* Main login container */
   .login-container {
     display: flex;
+    width: 100%;
+    max-width: 1200px;
     background: white;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    width: 80%;
-    max-width: 1200px;
+    flex-wrap: wrap; 
   }
   
+  /* Login form styles */
   .login-form {
     flex: 1;
     padding: 40px;
@@ -26,9 +37,9 @@
   }
   
   .login-form h2 {
-    font-size: 28px;
+    font-size: 32px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
   
   .login-form p {
@@ -42,18 +53,19 @@
   
   .login-form .form-group label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     font-weight: 500;
   }
   
   .login-form .form-group input {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 16px;
   }
   
+  /* Password container for forgot password link */
   .password-container {
     display: flex;
     justify-content: space-between;
@@ -70,6 +82,7 @@
     text-decoration: underline;
   }
   
+  /* Login button styles */
   .login-form .login-btn {
     width: 100%;
     padding: 12px;
@@ -86,6 +99,7 @@
     background-color: #45a049;
   }
   
+  /* Sign up link */
   .signup-link {
     text-align: center;
     margin-top: 20px;
@@ -100,6 +114,7 @@
     text-decoration: underline;
   }
   
+  /* Login image styles */
   .login-image {
     flex: 1;
     background-color: #f0f0f0;
@@ -112,5 +127,23 @@
     width: 100%;
     height: auto;
     object-fit: cover;
+  }
+  
+  /* Responsive styles for smaller screens */
+  @media (max-width: 768px) {
+    /* Stack login form and image on small screens */
+    .login-container {
+      flex-direction: column;
+    }
+  
+    /* Adjust login form padding */
+    .login-form {
+      padding: 20px;
+    }
+  
+    /* Image container height adjustments */
+    .login-image {
+      height: 250px; 
+    }
   }
   
